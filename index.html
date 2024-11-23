@@ -4,19 +4,7 @@
         <title>Capture Test</title>
     </head>
     <body>
-        <input type="file" id="camfile" accept="image/*" capture="camera">
-        <script>
-            var camfile = document.getElementById('camfile');
-            camfile.addEventListener('change', function() {
-                var file = camfile.files[0];
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    var img = new Image();
-                    img.src = e.target.result;
-                    document.body.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            });
-        </script>
+        <script src="main.js"></script>
+        <video id="webcam" width="640" height="480" autoplay></video>
     </body>
 </html>
