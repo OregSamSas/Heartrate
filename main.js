@@ -31,6 +31,8 @@ if (navigator.mediaDevices?.getUserMedia) {
         video.addEventListener('play', () => {
             processFrame();
         });
+
+        video.style.display = "none";
     })
     .catch((error) => {
         console.log("Rejected!", error);
