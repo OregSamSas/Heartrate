@@ -1,13 +1,13 @@
 if (navigator.mediaDevices?.getUserMedia) {
     // getUserMedia is supported
     navigator.mediaDevices
-    .getUserMedia({ video: true})
+    .getUserMedia({ video: { facingMode: "environment", torch: true }})
     .then((localMediaStream) => {
       const video = document.querySelector("video");
       video.srcObject = localMediaStream;
     })
     .catch((error) => {
-      console.log("No permission for video!", error);
+      console.log("Rejected!", error);
     });
 } else {
     alert("navigator.mediaDevices.getUserMedia() is not supported");
